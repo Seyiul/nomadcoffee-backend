@@ -6,10 +6,10 @@ export default gql`
     username: String!
     email: String!
     name: String!
-    location: String!
+    location: String
     password: String!
-    avatarURL: String!
-    githubUsername: String!
+    avatarURL: String
+    githubUsername: String
     following: [User]
     followers: [User]
     totalFollowing: Int!
