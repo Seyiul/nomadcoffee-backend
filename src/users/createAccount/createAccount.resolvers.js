@@ -34,9 +34,9 @@ export default {
             email,
             password: uglyPassword,
             name,
-            location,
-            avatarURL,
-            githubUsername,
+            ...(location && { location }),
+            ...(avatarURL && { avatarURL }),
+            ...(githubUsername && { githubUsername }),
           },
         });
       } catch (e) {
