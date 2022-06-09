@@ -1,6 +1,15 @@
 import client from "../client";
 export default {
   User: {
+    CoffeeShop: ({ id }) => {
+      client.coffeeShop.findMany({
+        where: {
+          user: {
+            id,
+          },
+        },
+      });
+    },
     totalFollowing: ({ id }) =>
       client.user.count({
         where: {

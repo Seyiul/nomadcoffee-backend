@@ -3,10 +3,14 @@ import client from "../../client";
 export default {
   Query: {
     seeCoffeeShops: async (_, { page }) => {
-      return await client.coffeeShop.findMany({
-        take: 3,
-        skip: (page - 1) * 3,
-      });
+      if (page) {
+        return await client.coffeeShop.findMany({
+          take: 5,
+          skip: (page - 1) * 5,
+        });
+      } else {
+        return await client.coffeeShop.findMany();
+      }
     },
   },
 };
