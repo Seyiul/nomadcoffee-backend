@@ -1,3 +1,4 @@
+import { createWriteStream } from "fs";
 import client from "../../client";
 import { protectResolver } from "../../users/users.utils";
 import { processCategories } from "../coffeeShop.utils";
@@ -26,11 +27,12 @@ export default {
         let newfileUrl = null;
         if (file) {
           const { filename, createReadStream } = await file;
-          const newFilename = `${Date.now()}-${filename}`;
+          const newFilename = `${loggedInUser.id}-${Date.now()}-${filename}`;
           const readStream = createReadStream();
           const writeStream = createWriteStream(
-            `${process.cwd()}/uploads/${newFilename}`
+            `${process.cwd()}/src/uploads/${newFilename}`
           );
+
           readStream.pipe(writeStream);
           newfileUrl = `http://localhost:4000/static/${newFilename}`;
         }
