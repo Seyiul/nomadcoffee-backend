@@ -7,7 +7,7 @@
     "dev": "nodemon --exec babel-node src/server",
     "migrate": "npx prisma migrate dev",
     "studio": "npx prisma studio",
-    "build" : "babel src --out-dir build",
+    "build": "babel src --out-dir build",
     "start": "node build/server"
   },
   "repository": {
@@ -33,17 +33,19 @@
     "bcrypt": "^5.0.1",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "fs-capacitor": "^6.2.0",
     "graphql": "^15.8.0",
     "graphql-tools": "^8.2.11",
+    "graphql-upload": "^11.0.0",
     "jsonwebtoken": "^8.5.1",
-    "morgan": "^1.10.0",
-    "fs-capacitor": "^6.2.0",
-    "graphql-upload": "^11.0.0"
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.0",
     "@babel/node": "^7.17.10",
     "@babel/preset-env": "^7.18.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "nodemon": "^2.0.16",
     "prisma": "^3.14.0"
   }

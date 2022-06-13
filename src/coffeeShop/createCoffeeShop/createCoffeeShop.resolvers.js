@@ -19,7 +19,10 @@ export default {
           },
         });
         if (existingShop) {
-          throw new Error("Existing Shop");
+          return {
+            ok: false,
+            error: "Existing Shop",
+          };
         }
         let fileUrl = null;
         if (file) {
@@ -37,7 +40,7 @@ export default {
         if (categories) {
           categoryObj = processCategories(categories);
         }
-        return await client.coffeeShop.create({
+        await client.coffeeShop.create({
           data: {
             name,
             user: {
@@ -59,6 +62,9 @@ export default {
             }),
           },
         });
+        return {
+          ok: true,
+        };
       }
     ),
   },
